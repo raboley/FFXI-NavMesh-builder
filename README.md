@@ -37,7 +37,7 @@ A C# app to help make building NavMeshes for FFXI faster using collision data.
 
 #### Dat Tab
 
-Here you can dump the zone collision data to an obj file,
+Here you can dump the zone collision data to obj files,
 
 ## 1. Click Load Zones.
 this zone dat list is provided by Devi Ltti (Thanks Devi).
@@ -68,27 +68,6 @@ here you can build navmeshes using FFXINAV.dll
 # Pleae Note: 
 When you click stop it will finish the Current NavMesh build.
 
-
-#### FFXINAV DLL
-* CanSeeDestination.
-* Unload.
-* Initialize // needs path to log config file (Default_Config.conf which is included).
-* Load  // loads the navmesh.
-* LoadOBJFile.
-* DumpNavMesh.
-* GetLogMessage.
-* FindPath.
-* FindRandomPath.
-* FindClosestPath. // this prevents exploits with navmesh / impassible terrain
-* IsValidPosition. // can be used to make a grid for A star pathfinding. (if you didn't want to use recast detour to find a path).
-* GetDistanceToWall. //this is distance to navmesh edge
-* GetRotation.
-* IsNavMeshEnabled.
-* PathPoints.
-* NavMeshSettings. //Lets you change the NavMesh settings before building a new mesh
-* GetWaypoints. //returns the waypoints in the path
-
-
 #### FAQ
 
 ##### How do I edit the navmesh that was built with FFXINAV.dll in RecastDemo.exe?.
@@ -114,4 +93,23 @@ When you click stop it will finish the Current NavMesh build.
 ##### How do i deal with doors? the navmesh wont go past them?.
    
 * If this happens, you can open the obj file in blender and delete the door, or you can open the obj and navmesh in recastdemo and add an offmesh links.
+
+#### FFXINAV DLL
+* CanSeeDestination.
+* Unload.
+* Initialize // needs path to log config file (Default_Config.conf which is included).
+* Load  // loads the navmesh.
+* LoadOBJFile.
+* DumpNavMesh.
+* GetLogMessage.
+* FindPath.
+* FindRandomPath.
+* FindClosestPath. // this prevents exploits with navmesh / impassible terrain
+* IsValidPosition. // can be used to make a grid for A star pathfinding. (if you didn't want to use recast detour to find a path).
+* GetDistanceToWall. //this is distance to navmesh edge
+* GetRotation.
+* IsNavMeshEnabled.
+* PathPoints.
+* NavMeshSettings. //Lets you change the NavMesh settings before building a new mesh
+* GetWaypoints. //returns the waypoints in the path
 
