@@ -115,7 +115,7 @@ When you click stop it will finish the Current NavMesh build.
      *  9. When you are finished click save from the tool menu on the right hand side.
      *  10.It will save as "all_tiles_navmesh.bin" you will need to rename this to "ZoneName.nav".   
        
-##### when I select an zone from the list to build a collision obj file for nothing happens or I get an error?. 
+##### when I select a zone from the list to build a collision obj file for nothing happens or I get an error?. 
    
 * you may need to edit zonelist.xml and change the path to where you have final fantasy xi installed.
 
