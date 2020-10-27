@@ -32,8 +32,8 @@ A C# app to help make building NavMeshes for FFXI faster using collision data.
 * Atom0s and EliteMMO for producing the current memory reading api.
 * The DarkStar project / Topaz team for providing invaluable insight into the underlying workings of the game. 
 	
-# Collision obj files can be found in here - Map Collision obj files folder.
-# NavMeshes can be found in here - Dumped NavMeshes folder.
+ Collision obj files can be found in here - Map Collision obj files folder.
+ NavMeshes can be found in here - Dumped NavMeshes folder.
 
 #### Dat Tab
 
