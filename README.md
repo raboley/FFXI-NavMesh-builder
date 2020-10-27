@@ -39,22 +39,18 @@ A C# app to help make building NavMeshes for FFXI faster using collision data.
 
 Here you can dump the zone collision data to an obj file,
 
-## 1. 
-* Click Load Zones.
+## 1. Click Load Zones.
 this zone dat list is provided by Devi Ltti (Thanks Devi).
 * Select ZoneList.xml.
 This will add all the Zones to the ListBox.
 
 # Please Note: You may need to edit ZoneList.xml if your installation of Final Fantasy XI is not C:/Program Files (x86)/PlayOnline/SquareEnix/FINAL FANTASY XI/.
 
-## 2. 
-Select the zone you want to build the collision OBJ file for.
+## 2. Select the zone you want to build the collision OBJ file for.
 
-## 2.1.
-Click to Build Selected Zone OBJ file.
+## 2.1. Click to Build Selected Zone OBJ file.
 
-## 3.
-Click this if you want to Build "All" collision OBJ file for current List.
+## 3. Click this if you want to Build "All" collision OBJ file for current List.
 # Please Note: 
 Some Zones this app will not be able to build a collision OBJ file for, Those zones are commented out in the ZoneList.xml.
 
@@ -62,17 +58,13 @@ Some Zones this app will not be able to build a collision OBJ file for, Those zo
 
 here you can build navmeshes using FFXINAV.dll
 
-# 1. 
-These settings are the "Default settings Topaz NavMeshes are made with. Changes to these settings will affect performance on the server.
+# 1. These settings are the "Default settings Topaz NavMeshes are made with. Changes to these settings will affect performance on the server.
 
-# 2.
-Click this to set up the DLL's Settings you must do this first before you start dumping meshes.
+# 2. Click this to set up the DLL's Settings you must do this first before you start dumping meshes.
 
-# 3.
-Click this to Select a OBJ file to build a NavMesh for.
+# 3. Click this to Select a OBJ file to build a NavMesh for.
 
-# 4.
-Click this to start orstop building NavMeshes for all OBJ files in the Map Collision obj files folder.
+# 4. Click this to start orstop building NavMeshes for all OBJ files in the Map Collision obj files folder.
 # Pleae Note: 
 When you click stop it will finish the Current NavMesh build.
 
