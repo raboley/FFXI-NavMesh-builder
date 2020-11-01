@@ -2,7 +2,7 @@
 A C# app to help make building NavMeshes for FFXI faster using collision data.
 
 here is a quick demo on what to do.
-https://www.twitch.tv/videos/783559048
+https://www.youtube.com/playlist?list=PLsww_EXH6VoprH94s967sgt_RM4ENYmb0
 
 #### Features
 * Dump zone collision data to obj files.
