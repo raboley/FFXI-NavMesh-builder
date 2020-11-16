@@ -10,7 +10,7 @@ https://www.youtube.com/playlist?list=PLsww_EXH6VoprH94s967sgt_RM4ENYmb0
 
 ### navmesh settings all meshes are dumped with, changing these settings will affect performance for Topaz.
 
-* float m_tileSize = 256;        
+*       float m_tileSize = 256;        
 *	float m_cellSize = 0.40f;
 *	float m_cellHeight = 0.20f;
 *	float m_agentHeight = 1.8f;    
@@ -25,8 +25,22 @@ https://www.youtube.com/playlist?list=PLsww_EXH6VoprH94s967sgt_RM4ENYmb0
 *	float m_detailSampleDist = 6.0f;
 *	float m_detailSampleMaxError = 1.0f;
 	
-#### Requirements
-* [Microsoft .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+#### if building meshes for player movement, use these settings.
+
+*      float m_tileSize = 64;         <<<< this can be changed for small zones.
+*      float m_cellSize = 0.20f;
+*      float m_cellHeight = 0.010f;
+*      float m_agentHeight = 1.8f;    
+*      float m_agentRadius = 0.7f;     <<<< if you make this too big it will break the mesh. 0.7f has been tested on most zones.
+*      float m_agentMaxClimb = 0.5f;   <<<< this might need changing for some zones. max climb changes from 0.3f to 0.5f, trial and error
+*      float m_agentMaxSlope = 46.0f;
+*      float m_regionMinSize = 8;
+*      float m_regionMergeSize = 20;
+*      float m_edgeMaxLen = 12.0f;
+*      float m_edgeMaxError = 1.3f;
+*      float m_vertsPerPoly = 6.0f;
+*      float m_detailSampleDist = 6.0f;
+*      float m_detailSampleMaxError = 1.0f;
 
 #### Special Thanks!
 
