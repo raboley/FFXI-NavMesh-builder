@@ -2,7 +2,7 @@
 A C# app to help make building NavMeshes for FFXI faster using collision data.
 
 here is a quick demo on what to do.
-https://www.twitch.tv/videos/783559048
+https://www.youtube.com/playlist?list=PLsww_EXH6VoprH94s967sgt_RM4ENYmb0
 
 #### Features
 * Dump zone collision data to obj files.
@@ -11,22 +11,36 @@ https://www.twitch.tv/videos/783559048
 ### navmesh settings all meshes are dumped with, changing these settings will affect performance for Topaz.
 
 * float m_tileSize = 256;        
-*	float m_cellSize = 0.40f;
-*	float m_cellHeight = 0.20f;
-*	float m_agentHeight = 1.8f;    
-*	float m_agentRadius = 0.3f;     
-*	float m_agentMaxClimb = 0.5f;   
-*	float m_agentMaxSlope = 46.0f;
-*	float m_regionMinSize = 8;
-*	float m_regionMergeSize = 20;
-*	float m_edgeMaxLen = 12.0f;
-*	float m_edgeMaxError = 1.3f;
-*	float m_vertsPerPoly = 6.0f;
-*	float m_detailSampleDist = 6.0f;
-*	float m_detailSampleMaxError = 1.0f;
+* float m_cellSize = 0.40f;
+* float m_cellHeight = 0.20f;
+* float m_agentHeight = 1.8f;    
+* float m_agentRadius = 0.3f;     
+* float m_agentMaxClimb = 0.5f;   
+* float m_agentMaxSlope = 46.0f;
+* float m_regionMinSize = 8;
+* float m_regionMergeSize = 20;
+* float m_edgeMaxLen = 12.0f;
+* float m_edgeMaxError = 1.3f;
+* float m_vertsPerPoly = 6.0f;
+* float m_detailSampleDist = 6.0f;
+* float m_detailSampleMaxError = 1.0f;
 	
-#### Requirements
-* [Microsoft .NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)
+#### if building meshes for player movement, use these settings.
+
+* float m_tileSize = 64;         <<<< this can be changed for small zones.
+* float m_cellSize = 0.20f;
+* float m_cellHeight = 0.010f;
+* float m_agentHeight = 1.8f;    
+* float m_agentRadius = 0.7f;     <<<< if you make this too big it will break the mesh. 0.7f has been tested on most zones.
+* float m_agentMaxClimb = 0.5f;   <<<< this might need changing for some zones. max climb changes from 0.3f to 0.5f, trial and error
+* float m_agentMaxSlope = 46.0f;
+* float m_regionMinSize = 8;
+* float m_regionMergeSize = 20;
+* float m_edgeMaxLen = 12.0f;
+* float m_edgeMaxError = 1.3f;
+* float m_vertsPerPoly = 6.0f;
+* float m_detailSampleDist = 6.0f;
+* float m_detailSampleMaxError = 1.0f;
 
 #### Special Thanks!
 
@@ -48,25 +62,24 @@ This will add all the Zones to the ListBox.
 
 # Please Note: You may need to edit ZoneList.xml if your installation of Final Fantasy XI is not C:/Program Files (x86)/PlayOnline/SquareEnix/FINAL FANTASY XI/.
 
-## 2. Select the zone you want to build the collision OBJ file for.
+2. Select the zone you want to build the collision OBJ file for.
 
-## 2.1. Click to Build Selected Zone OBJ file.
+2.1. Click to Build Selected Zone OBJ file.
 
-## 3. Click this if you want to Build "All" collision OBJ file for current List.
+3. Click this if you want to Build "All" collision OBJ file for current List.
 # Please Note: 
 Some Zones this app will not be able to build a collision OBJ file for, Those zones are commented out in the ZoneList.xml.
 
 #### NavMesh Tab
-
 here you can build navmeshes using FFXINAV.dll
 
-# 1. These settings are the "Default settings Topaz NavMeshes are made with. Changes to these settings will affect performance on the server.
+1. These settings are the "Default settings Topaz NavMeshes are made with. Changes to these settings will affect performance on the server.
 
-# 2. Click this to set up the DLL's Settings you must do this first before you start dumping meshes.
+2. Click this to set up the DLL's Settings you must do this first before you start dumping meshes.
 
-# 3. Click this to Select a OBJ file to build a NavMesh for.
+3. Click this to Select a OBJ file to build a NavMesh for.
 
-# 4. Click this to start orstop building NavMeshes for all OBJ files in the Map Collision obj files folder.
+4. Click this to start orstop building NavMeshes for all OBJ files in the Map Collision obj files folder.
 # Pleae Note: 
 When you click stop it will finish the Current NavMesh build.
 
