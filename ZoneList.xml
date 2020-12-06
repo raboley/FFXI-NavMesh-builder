@@ -300,4 +300,6 @@
   <Zones ID="296" Name="Dynamis-Windurst_[D]" Path="C:/Program Files (x86)/PlayOnline/SquareEnix/FINAL FANTASY XI/ROM/355/32.DAT" />
   <Zones ID="297" Name="Dynamis-Jeuno_[D]" Path="C:/Program Files (x86)/PlayOnline/SquareEnix/FINAL FANTASY XI/ROM/355/47.DAT" />
   <Zones ID="298" Name="Walk_of_Echoes_[P1]" Path="C:/Program Files (x86)/PlayOnline/SquareEnix/FINAL FANTASY XI/ROM/361/85.DAT" />
+  <Zones ID="900" Name="Carpenters_Guild_North_San_dOria" Path="C:/Program Files (x86)/PlayOnline/SquareEnix/FINAL FANTASY XI/ROM/1/121.DAT" />
+  <Zones ID="901" Name="BlackSmiths_Guild_North_San_dOria" Path="C:/Program Files (x86)/PlayOnline/SquareEnix/FINAL FANTASY XI/ROM/1/124.DAT" />
 </ArrayOfZones>

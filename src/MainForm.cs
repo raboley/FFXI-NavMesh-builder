@@ -560,5 +560,23 @@ namespace FFXINAVBUILDER
                 Logger.AddDebugText(rtbDebug, es.ToString());
             }
         }
+
+        private void SearchBoxTB_TextChanged(object sender, EventArgs e)
+        {
+            if (mapLB.Items.Count > 0)
+            {
+                if (SearchBoxTB.Text != "")
+                {
+                    for (int i = 0; i < mapLB.Items.Count; i++)
+                    {
+                        if (mapLB.Items[i].ToString().StartsWith(SearchBoxTB.Text, StringComparison.CurrentCultureIgnoreCase))
+                        {
+                            mapLB.SelectedItem = mapLB.Items[i];
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }
