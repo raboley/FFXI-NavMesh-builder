@@ -69,34 +69,5 @@ namespace FFXINAVBUILDER.Properties {
                 return ((byte[])(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to  &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;ArrayOfPointsOfInterest xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-        ///&lt;!--An Example xml for PointsOfInterest for Southern San d&apos;Oria--&gt;
-        ///  &lt;PointsOfInterest id=&quot;230&quot; name=&quot;Moghouse&quot; x=&quot;165.2&quot; y=&quot;-2.000005&quot; z=&quot;162.23999&quot; /&gt;
-        ///  &lt;PointsOfInterest id=&quot;230&quot; name=&quot;Northern San d&apos;oria&quot; x=&quot;0.69&quot; y=&quot;-2&quot; z=&quot;56.6&quot; /&gt;
-        ///  &lt;PointsOfInterest id=&quot;230&quot; name=&quot;West Ronfaure&quot; x=&quot;-113.48&quot; y=&quot;0&quot; z=&quot;-55.95&quot; /&gt;
-        ///  &lt;PointsOfInterest id [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string SouthSandy_points {
-            get {
-                return ResourceManager.GetString("SouthSandy_points", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;ArrayOfZones xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-        ///&lt;!--Special thanks to Devi Ltti for providing the zone dat locations. --&gt;
-        ///  &lt;Zones ID=&quot;0&quot; Name=&quot;unknown&quot; Path=&quot;C:/Program Files (x86)/PlayOnline/SquareEnix/FINAL FANTASY XI/ROM/1/20.DAT&quot; /&gt;
-        ///  &lt;!--&lt;Zones ID=&quot;1&quot; Name=&quot;Phanauet_Channel&quot; Path=&quot;C:/Program Files (x86)/PlayOnline/SquareEnix/FINAL FANTASY XI/ROM3/0/0.DAT&quot; /&gt;  --&gt;
-        ///  &lt;Zones ID=&quot;2&quot; Name=&quot;Carpente [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ZoneList {
-            get {
-                return ResourceManager.GetString("ZoneList", resourceCulture);
-            }
-        }
     }
 }
