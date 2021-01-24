@@ -68,7 +68,7 @@ This will add all the Zones to the ListBox.
 
 3. Click this if you want to Build "All" collision OBJ file for current List.
 # Please Note: 
-Some Zones this app will not be able to build a collision OBJ file for, Those zones are commented out in the ZoneList.xml.
+Some Zones (Airships) take a while to dump the obj files.
 
 #### NavMesh Tab
 here you can build navmeshes using FFXINAV.dll

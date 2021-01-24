@@ -10,6 +10,7 @@
 // <summary>
 // </summary>
 // ***********************************************************************
+
 using System.Xml.Serialization;
 
 namespace FFXINAVBUILDER.Common
@@ -19,39 +20,43 @@ namespace FFXINAVBUILDER.Common
     /// </summary>
     public class PointsOfInterest
     {
+        #region Public Properties
+
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
-        /// <value>The identifier.</value>
+        /// <value> The identifier. </value>
         [XmlAttribute("id")]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
-        /// <value>The name.</value>
+        /// <value> The name. </value>
         [XmlAttribute("name")]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the x.
         /// </summary>
-        /// <value>The x.</value>
+        /// <value> The x. </value>
         [XmlAttribute("x")]
         public float X { get; set; }
 
         /// <summary>
         /// Gets or sets the y.
         /// </summary>
-        /// <value>The y.</value>
+        /// <value> The y. </value>
         [XmlAttribute("y")]
         public float Y { get; set; }
 
         /// <summary>
         /// Gets or sets the z.
         /// </summary>
-        /// <value>The z.</value>
+        /// <value> The z. </value>
         [XmlAttribute("z")]
         public float Z { get; set; }
+
+        #endregion Public Properties
     }
 }

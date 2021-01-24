@@ -10,6 +10,7 @@
 // <summary>
 // </summary>
 // ***********************************************************************
+
 using System.IO;
 using System.Xml.Serialization;
 
@@ -20,12 +21,14 @@ namespace FFXINAVBUILDER.Common
     /// </summary>
     public class XmlSerializationHelper
     {
+        #region Public Methods
+
         /// <summary>
         /// Deserializes the specified filename.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="filename">The filename.</param>
-        /// <returns>T.</returns>
+        /// <typeparam name="T"> </typeparam>
+        /// <param name="filename"> The filename. </param>
+        /// <returns> T. </returns>
         public static T Deserialize<T>(string filename)
         {
             try
@@ -39,31 +42,30 @@ namespace FFXINAVBUILDER.Common
             }
             catch
             {
-                return default(T);
+                return default;
             }
         }
 
         /// <summary>
         /// Serializes the specified filename.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="filename">The filename.</param>
-        /// <param name="obj">The object.</param>
+        /// <typeparam name="T"> </typeparam>
+        /// <param name="filename"> The filename. </param>
+        /// <param name="obj">      The object. </param>
         public static void Serialize<T>(string filename, T obj)
         {
             var xs = new XmlSerializer(typeof(T));
 
             var dir = Path.GetDirectoryName(filename);
 
-            if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
-            {
-                Directory.CreateDirectory(dir);
-            }
+            if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir)) Directory.CreateDirectory(dir);
 
             using (var sw = new StreamWriter(filename))
             {
                 xs.Serialize(sw, obj);
             }
         }
+
+        #endregion Public Methods
     }
 }

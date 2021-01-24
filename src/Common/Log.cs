@@ -10,8 +10,10 @@
 // <summary>
 // </summary>
 // ***********************************************************************
+
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -23,16 +25,22 @@ namespace FFXINAVBUILDER.Common
     /// </summary>
     public class Log
     {
+        #region Private Fields
+
         /// <summary>
         /// The font size
         /// </summary>
-        public float FontSize = 9;
+        private float FontSize = 9;
+
+        #endregion Private Fields
+
+        #region Public Methods
 
         /// <summary>
         /// Adds the debug text.
         /// </summary>
-        /// <param name="tb">The tb.</param>
-        /// <param name="text">The text.</param>
+        /// <param name="tb">   The tb. </param>
+        /// <param name="text"> The text. </param>
         public void AddDebugText(RichTextBox tb, string text)
         {
             if (tb.InvokeRequired)
@@ -42,11 +50,12 @@ namespace FFXINAVBUILDER.Common
             else
             {
                 tb.SelectionStart = tb.Text.Length;
-                tb.SelectionFont = new Font("Tahoma", FontSize, FontStyle.Regular); //delete if not letting user set font
-                tb.SelectionColor = System.Drawing.Color.DarkMagenta;
+                tb.SelectionFont =
+                    new Font("Tahoma", FontSize, FontStyle.Regular); //delete if not letting user set font
+                tb.SelectionColor = Color.DarkMagenta;
                 tb.SelectedText += DateTime.Now;
                 tb.SelectionStart = tb.Text.Length;
-                tb.SelectionColor = System.Drawing.Color.White;
+                tb.SelectionColor = Color.White;
                 tb.SelectedText += " ";
                 tb.SelectedText += text;
                 tb.SelectedText += Environment.NewLine;
@@ -64,13 +73,11 @@ namespace FFXINAVBUILDER.Common
             {
                 if (File.Exists("Log.txt"))
                 {
-                    FileInfo fi = new FileInfo("Log.txt");
+                    var fi = new FileInfo("Log.txt");
                     if (fi.LastAccessTime < DateTime.Now.AddDays(-7))
-                    {
                         using (new StreamWriter(fi.Open(FileMode.Truncate)))
                         {
                         }
-                    }
                 }
                 else if (!File.Exists("Log.txt"))
                 {
@@ -82,18 +89,21 @@ namespace FFXINAVBUILDER.Common
             catch (Exception ex)
             {
                 using (TextWriter writer = File.CreateText("Log.txt"))
+                {
                     writer.Write(ex);
+                }
             }
         }
 
         /// <summary>
         /// Logs the file.
         /// </summary>
-        /// <param name="sExceptionName">Name of the s exception.</param>
-        /// <param name="sFormName">Name of the s form.</param>
-        /// <param name="lineNumber">The line number.</param>
-        /// <param name="caller">The caller.</param>
-        public void LogFile(string sExceptionName, string sFormName, [CallerLineNumber] int lineNumber = 0, [CallerMemberName] string caller = null)
+        /// <param name="sExceptionName"> Name of the s exception. </param>
+        /// <param name="sFormName">      Name of the s form. </param>
+        /// <param name="lineNumber">     The line number. </param>
+        /// <param name="caller">         The caller. </param>
+        public void LogFile(string sExceptionName, string sFormName, [CallerLineNumber] int lineNumber = 0,
+            [CallerMemberName] string caller = null)
         {
             try
             {
@@ -101,7 +111,8 @@ namespace FFXINAVBUILDER.Common
                 {
                     using (TextWriter tw = File.AppendText("Log.txt"))
                     {
-                        tw.WriteLine(string.Format(@"{0}, {1}, at line {2},({3}) ,{4}", DateTime.Now.ToString(), sExceptionName, lineNumber, caller, sFormName));
+                        tw.WriteLine(
+                            $@"{DateTime.Now.ToString(CultureInfo.InvariantCulture)}, {sExceptionName}, at line {lineNumber},({caller}) ,{sFormName}");
                         tw.Close();
                     }
                 }
@@ -113,7 +124,8 @@ namespace FFXINAVBUILDER.Common
 
                     using (TextWriter tw = File.AppendText("Log.txt"))
                     {
-                        tw.WriteLine(string.Format(@"{0}, {1}, at line {2},({3}) ,{4}", DateTime.Now.ToString(), sExceptionName, lineNumber, caller, sFormName));
+                        tw.WriteLine(
+                            $@"{DateTime.Now.ToString(CultureInfo.InvariantCulture)}, {sExceptionName}, at line {lineNumber},({caller}) ,{sFormName}");
                         tw.Close();
                     }
                 }
@@ -131,22 +143,21 @@ namespace FFXINAVBUILDER.Common
         /// <summary>
         /// Saves the chat logs.
         /// </summary>
-        /// <param name="rtb">The RTB.</param>
-        /// <param name="name">The name.</param>
+        /// <param name="rtb">  The RTB. </param>
+        /// <param name="name"> The name. </param>
         public void SaveChatLogs(RichTextBox rtb, string name)
         {
             try
             {
-                using (SaveFileDialog diaLog = new SaveFileDialog())
+                using (var diaLog = new SaveFileDialog())
                 {
-                    diaLog.InitialDirectory = (string.Format(Application.StartupPath + "\\Documents\\{0}\\ChatLog\\", name));
+                    diaLog.InitialDirectory =
+                        string.Format(Application.StartupPath + "\\Documents\\{0}\\ChatLog\\", name);
                     diaLog.RestoreDirectory = true;
                     diaLog.DefaultExt = "*.txt";
-                    diaLog.Filter = "TXT Files|*.txt";
-                    if ((diaLog.ShowDialog() == DialogResult.OK) && (diaLog.FileName.Length > 0))
-                    {
+                    diaLog.Filter = @"TXT Files|*.txt";
+                    if (diaLog.ShowDialog() == DialogResult.OK && diaLog.FileName.Length > 0)
                         rtb.SaveFile(diaLog.FileName, RichTextBoxStreamType.PlainText);
-                    }
                 }
             }
             catch (Exception ex)
@@ -154,5 +165,7 @@ namespace FFXINAVBUILDER.Common
                 LogFile(ex.Message, "Log");
             }
         }
+
+        #endregion Public Methods
     }
 }

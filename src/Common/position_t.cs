@@ -10,15 +10,26 @@
 // <summary>
 // </summary>
 // ***********************************************************************
-using System;
 
 namespace FFXINAVBUILDER.Common
 {
     /// <summary>
     /// Struct position_t
     /// </summary>
-    public struct position_t
+    public struct PositionT
     {
+        #region Public Fields
+
+        /// <summary>
+        /// The moving
+        /// </summary>
+        public ushort Moving;
+
+        /// <summary>
+        /// The rotation
+        /// </summary>
+        public sbyte Rotation;
+
         /// <summary>
         /// The x
         /// </summary>
@@ -34,14 +45,6 @@ namespace FFXINAVBUILDER.Common
         /// </summary>
         public float Z;
 
-        /// <summary>
-        /// The moving
-        /// </summary>
-        public UInt16 Moving;
-
-        /// <summary>
-        /// The rotation
-        /// </summary>
-        public sbyte Rotation;
+        #endregion Public Fields
     }
 }

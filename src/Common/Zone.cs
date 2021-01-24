@@ -10,6 +10,7 @@
 // <summary>
 // </summary>
 // ***********************************************************************
+
 using System.Xml.Serialization;
 
 namespace FFXINAVBUILDER.Common
@@ -19,25 +20,25 @@ namespace FFXINAVBUILDER.Common
     /// </summary>
     public class Zones
     {
+        #region Public Properties
+
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
-        /// <value>The identifier.</value>
+        /// <value> The identifier. </value>
         [XmlAttribute("ID")]
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        /// <summary>
-        /// Gets or sets the name.
-        /// </summary>
-        /// <value>The name.</value>
-        [XmlAttribute("Name")]
-        public string name { get; set; }
+        [XmlAttribute("Name")] public string Name { get; set; }
+        [XmlAttribute("Path")] public string Path { get; set; }
+        [XmlAttribute("Type")] public int Type { get; set; }
 
-        /// <summary>
-        /// Gets or sets the Path.
-        /// </summary>
-        /// <value>The Path.</value>
-        [XmlAttribute("Path")]
-        public string path { get; set; }
+        #endregion Public Properties
+
+        //[XmlAttribute("GridWidth")]
+        //public int gridWidth { get; set; }
+
+        //[XmlAttribute("GridHeight")]
+        //public int gridHeight { get; set; }
     }
 }

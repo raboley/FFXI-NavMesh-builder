@@ -89,6 +89,7 @@
             this.rtbDebug = new System.Windows.Forms.RichTextBox();
             this.DumpDatWorker = new System.ComponentModel.BackgroundWorker();
             this.DumpMeshes = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.ZoneListMenuStrip.SuspendLayout();
@@ -110,6 +111,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.progressBar1);
             this.tabPage1.Controls.Add(this.label30);
             this.tabPage1.Controls.Add(this.SearchBoxTB);
             this.tabPage1.Controls.Add(this.label25);
@@ -136,7 +138,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label30.Location = new System.Drawing.Point(267, 197);
+            this.label30.Location = new System.Drawing.Point(267, 191);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(146, 17);
@@ -145,7 +147,7 @@
             // 
             // SearchBoxTB
             // 
-            this.SearchBoxTB.Location = new System.Drawing.Point(31, 197);
+            this.SearchBoxTB.Location = new System.Drawing.Point(31, 191);
             this.SearchBoxTB.Name = "SearchBoxTB";
             this.SearchBoxTB.Size = new System.Drawing.Size(227, 22);
             this.SearchBoxTB.TabIndex = 29;
@@ -156,7 +158,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label25.Location = new System.Drawing.Point(0, 263);
+            this.label25.Location = new System.Drawing.Point(0, 257);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(19, 20);
@@ -168,7 +170,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label24.Location = new System.Drawing.Point(4, 229);
+            this.label24.Location = new System.Drawing.Point(4, 223);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(34, 20);
@@ -214,7 +216,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(267, 235);
+            this.label2.Location = new System.Drawing.Point(267, 229);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(415, 17);
@@ -225,7 +227,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(267, 266);
+            this.label1.Location = new System.Drawing.Point(267, 260);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(366, 17);
@@ -234,7 +236,7 @@
             // 
             // DumpAllBtn
             // 
-            this.DumpAllBtn.Location = new System.Drawing.Point(31, 260);
+            this.DumpAllBtn.Location = new System.Drawing.Point(31, 254);
             this.DumpAllBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DumpAllBtn.Name = "DumpAllBtn";
             this.DumpAllBtn.Size = new System.Drawing.Size(228, 28);
@@ -263,7 +265,7 @@
             // 
             // DumpSelectedMapDatBtn
             // 
-            this.DumpSelectedMapDatBtn.Location = new System.Drawing.Point(31, 229);
+            this.DumpSelectedMapDatBtn.Location = new System.Drawing.Point(31, 223);
             this.DumpSelectedMapDatBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DumpSelectedMapDatBtn.Name = "DumpSelectedMapDatBtn";
             this.DumpSelectedMapDatBtn.Size = new System.Drawing.Size(228, 28);
@@ -276,7 +278,7 @@
             // 
             this.mapLB.FormattingEnabled = true;
             this.mapLB.ItemHeight = 16;
-            this.mapLB.Location = new System.Drawing.Point(31, 44);
+            this.mapLB.Location = new System.Drawing.Point(31, 38);
             this.mapLB.Margin = new System.Windows.Forms.Padding(4);
             this.mapLB.Name = "mapLB";
             this.mapLB.Size = new System.Drawing.Size(227, 148);
@@ -852,6 +854,17 @@
             this.DumpMeshes.WorkerSupportsCancellation = true;
             this.DumpMeshes.DoWork += new System.ComponentModel.DoWorkEventHandler(this.DumpMeshes_DoWork);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Enabled = false;
+            this.progressBar1.Location = new System.Drawing.Point(4, 287);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(1012, 10);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.TabIndex = 31;
+            this.progressBar1.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -938,6 +951,7 @@
         private System.Windows.Forms.Label label26;
         public System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox SearchBoxTB;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
